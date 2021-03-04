@@ -11,21 +11,14 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-  res.redirect('/box')
+  res.send({ msg: 'hello' })
 })
 
-app.get('/box', (req, res) => {
-  console.log('--- URL ---')
-  console.log(req.url)
+app.post('/box', (req, res) => {
   console.log('--- HEADERS ---')
   console.log(req.headers)
   console.log('--- BODY ---')
   console.log(req.body)
-  console.log('--- PARAMS ---')
-  console.log(req.params)
-  console.log('--- QUERY ---')
-  console.log(req.query)
-
   res.send({ msg: 'Webhook notifications received' })
 })
 

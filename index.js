@@ -10,6 +10,10 @@ const express = require('express')
 
 const app = express()
 
+app.get('/', (req, res) => {
+  res.redirect('/box')
+})
+
 app.get('/box', (req, res) => {
   console.log('--- URL ---')
   console.log(req.url)
@@ -32,6 +36,6 @@ app.get('/box', (req, res) => {
 // )
 
 const PORT = process.env.PORT || 5000
-app.listen(3000, () =>
+app.listen(PORT, () =>
   console.log(`Server is listening at http://localhost:${PORT}`)
 )
